@@ -5,7 +5,7 @@ pipeline {
    }
     environment {
         DOCKER_IMAGE_NAME = 'archis002/calculator'
-        GITHUB_REPO_URL = 'git@github.com:ArchisKulkarni002/SPE_Miniproject.git'
+        GITHUB_REPO_URL = 'https://github.com/ArchisKulkarni002/SPE_Miniproject.git'
     }
 
     stages {
