@@ -1,0 +1,23 @@
+---
+- name: Deploy Calculator Docker Container
+  hosts: localhost
+  remote_user: archis
+  become: false
+
+  tasks:
+    - name: Pull Docker Image from Docker Hub
+      docker_image:
+        name: "archis002/calculator"
+        source: pull
+      register: docker_pull_result
+
+    - name: Display Docker Pull Result
+      debug:
+        var: docker_pull_result
+
+    - name: Remove existing container if running
+      shell: docker rm -f calculator || true
+      ignore_errors: yes
+
+    - name: Run Calculator Docker Container
+      shell: docker run -d --name calculator archis002/calculator
