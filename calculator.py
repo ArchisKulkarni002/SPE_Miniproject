@@ -77,6 +77,7 @@ def scientificMenu():
 def main():
     while True:
         print("\nHello there!")
+        print("\nLets calculate some stuff!")
         print("\nCalculator Menu")
         print("1. Basic Operations")
         print("2. Scientific Operations")
